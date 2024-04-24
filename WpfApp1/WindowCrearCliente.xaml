@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp1.WindowCrearCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WindowCrearCliente" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="crearNombreCliente" HorizontalAlignment="Left" Margin="123,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearDireccion" HorizontalAlignment="Left" Margin="123,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearPoblacion" HorizontalAlignment="Left" Margin="123,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearTelefono" HorizontalAlignment="Left" Margin="123,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="48,131,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="48,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Población" HorizontalAlignment="Left" Margin="48,213,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="48,254,0,0" VerticalAlignment="Top"/>
+        <Button Content="Crear Cliente" HorizontalAlignment="Left" Margin="358,322,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Window>

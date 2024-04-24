@@ -130,7 +130,7 @@ namespace WpfApp1
         {
             try
             {
-                //int idSeleccionado = Convert.ToInt32(listaPedidosTotales.SelectedValue);
+                
 
                 string consulta = "DELETE FROM pedido WHERE Id = @pedidoId";
 
@@ -140,7 +140,7 @@ namespace WpfApp1
 
                 miComandoSql.Parameters.AddWithValue("@pedidoId", listaPedidosTotales.SelectedValue);
 
-                //SqlCommand miAdaptadorSql = new SqlCommand(consulta, miConexionSql);
+                
 
                 miComandoSql.Connection.Open();
 
@@ -154,12 +154,17 @@ namespace WpfApp1
                    
             catch (Exception ex)
             {
-                MessageBox.Show("Error "+ex);
+                MessageBox.Show("Error "+ex.ToString());
             }
-                
-            
-
         }
+
+        
+
+
+
+
+
+
 
         //EVENTOS:
         private void listaClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -190,7 +195,23 @@ namespace WpfApp1
 
         private void ActualizarLista_Click(object sender, RoutedEventArgs e)
         {
-            MuestraPedidosTotales();
+            try
+            {
+                MuestraPedidosTotales();
+                MuestraClientes();
+                
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
+
+        private void btAgregarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            WindowCrearCliente windowCrearCliente = new WindowCrearCliente();
+
+            windowCrearCliente.Show();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -25,21 +26,49 @@ namespace WpfApp1
         {
             InitializeComponent();
 
+
             string miConexion = ConfigurationManager.ConnectionStrings["WpfApp1.Properties.Settings.PruebaLeandroConnectionString"].ConnectionString;
 
             miConexionSql = new SqlConnection(miConexion);
 
+            MostrarClientes();
             
         }
 
         SqlConnection miConexionSql;
+
+        private void MostrarClientes()
+        {
+            try
+            {
+                string consulta = "SELECT * FROM cliente";
+
+                SqlDataAdapter miAdaptadorSQL = new SqlDataAdapter(consulta, miConexionSql);
+
+                using (miAdaptadorSQL)
+                {
+                    DataTable clientesTabla = new DataTable();
+
+                    miAdaptadorSQL.Fill(clientesTabla);
+
+                    listaClientesAgregarPedido.DisplayMemberPath = "nombre";
+                    listaClientesAgregarPedido.SelectedValuePath = "Id";
+                    listaClientesAgregarPedido.ItemsSource = clientesTabla.DefaultView;
+
+                }
+            }
+
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error: "+ex);
+            }
+        }
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-               
-
+                
                 string consulta = "INSERT INTO pedido (cCliente, fechaPedido, formaPago) " + 
                     "VALUES (@cClienteCreado, @fechaPedidoCreado, @formaPagoCreado)";
 
@@ -47,7 +76,7 @@ namespace WpfApp1
 
                 SqlDataAdapter miAdaptador = new SqlDataAdapter(miComando);
 
-                miComando.Parameters.AddWithValue("@cClienteCreado", crearCodCliente.Text);
+                miComando.Parameters.AddWithValue("@cClienteCreado", listaClientesAgregarPedido.SelectedValue);
 
                 miComando.Parameters.AddWithValue("@fechaPedidoCreado", crearFechaPedido.Text);
 

@@ -8,13 +8,12 @@
         Title="WindowAgregarPedido" Height="450" Width="800">
     <Grid>
         <Label Content="AGREGAR PEDIDO" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Height="70" Width="198" FontSize="22"/>
-        <TextBox x:Name="crearCodCliente" HorizontalAlignment="Left" Margin="173,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="crearFechaPedido" HorizontalAlignment="Left" Margin="173,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="crearFormaPago" HorizontalAlignment="Left" Margin="173,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Código del Cliente" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha del Pedido" HorizontalAlignment="Left" Margin="32,167,0,0" VerticalAlignment="Top"/>
-        <Label Content="Forma de Pago" HorizontalAlignment="Left" Margin="32,213,0,0" VerticalAlignment="Top"/>
-        <Button Content="Crear Pedido" HorizontalAlignment="Left" Margin="196,311,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="crearFechaPedido" HorizontalAlignment="Left" Margin="534,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearFormaPago" HorizontalAlignment="Left" Margin="534,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Fecha del Pedido" HorizontalAlignment="Left" Margin="400,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Forma de Pago" HorizontalAlignment="Left" Margin="410,213,0,0" VerticalAlignment="Top"/>
+        <Button Content="Crear Pedido" HorizontalAlignment="Left" Margin="582,334,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <ListBox x:Name="listaClientesAgregarPedido" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="120,111,532,80"/>
 
     </Grid>
 </Window>
