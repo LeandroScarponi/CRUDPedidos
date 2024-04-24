@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp1.WindowAgregarPedido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WindowAgregarPedido" Height="450" Width="800">
+    <Grid>
+        <Label Content="AGREGAR PEDIDO" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Height="70" Width="198" FontSize="22"/>
+        <TextBox x:Name="crearCodCliente" HorizontalAlignment="Left" Margin="173,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearFechaPedido" HorizontalAlignment="Left" Margin="173,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="crearFormaPago" HorizontalAlignment="Left" Margin="173,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Código del Cliente" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha del Pedido" HorizontalAlignment="Left" Margin="32,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Forma de Pago" HorizontalAlignment="Left" Margin="32,213,0,0" VerticalAlignment="Top"/>
+        <Button Content="Crear Pedido" HorizontalAlignment="Left" Margin="196,311,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Window>
