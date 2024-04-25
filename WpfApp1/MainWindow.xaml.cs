@@ -203,7 +203,7 @@ namespace WpfApp1
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Error: " + ex.ToString());
+                //MessageBox.Show("Error: " + ex.ToString());
             }
         }
 

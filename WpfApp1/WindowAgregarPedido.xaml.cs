@@ -96,10 +96,44 @@ namespace WpfApp1
 
             catch (Exception ex) 
             {
+                miConexionSql.Close();
                 MessageBox.Show("Error: " + ex.ToString());
             }
             
 
+        }
+
+        private void listaClientesAgregarPedido_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var clienteSeleccionado = listaClientesAgregarPedido.SelectedValue;
+
+            string consulta = "SELECT nombre FROM cliente WHERE Id = @idCliente";
+
+            SqlCommand miComando = new SqlCommand (consulta, miConexionSql);
+
+            miComando.Parameters.AddWithValue("@idCliente", clienteSeleccionado);
+
+            miConexionSql.Open();
+
+            using (miComando)
+            {
+                object resultado = miComando.ExecuteScalar();
+
+                labelVacio.Content = resultado;
+            }
+
+            miConexionSql.Close();
+
+
+
+            //miComando.Connection.Open ();
+
+            //miComando.ExecuteNonQuery ();
+
+            //labelVacio.Content = consulta;
+
+
+            //miComando.Connection.Close ();
         }
     }
 }

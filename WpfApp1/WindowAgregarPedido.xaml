@@ -13,7 +13,8 @@
         <Label Content="Fecha del Pedido" HorizontalAlignment="Left" Margin="400,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Forma de Pago" HorizontalAlignment="Left" Margin="410,213,0,0" VerticalAlignment="Top"/>
         <Button Content="Crear Pedido" HorizontalAlignment="Left" Margin="582,334,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <ListBox x:Name="listaClientesAgregarPedido" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="120,111,532,80"/>
+        <ListBox x:Name="listaClientesAgregarPedido" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="120,111,532,80" SelectionChanged="listaClientesAgregarPedido_SelectionChanged"/>
+        <Label x:Name="labelVacio" Content="" HorizontalAlignment="Left" Margin="534,86,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold" FontSize="16"/>
 
     </Grid>
 </Window>

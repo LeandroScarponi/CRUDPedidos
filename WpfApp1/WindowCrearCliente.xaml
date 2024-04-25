@@ -16,6 +16,7 @@
         <Label Content="Población" HorizontalAlignment="Left" Margin="48,213,0,0" VerticalAlignment="Top"/>
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="48,254,0,0" VerticalAlignment="Top"/>
         <Button Content="Crear Cliente" HorizontalAlignment="Left" Margin="358,322,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="CREAR CLIENTE" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="22"/>
 
     </Grid>
 </Window>
